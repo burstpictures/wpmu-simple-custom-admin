@@ -39,4 +39,13 @@ require WPMU_PLUGIN_DIR . '/simple-custom-admin/simple-custom-admin.php';
 
 Replace the logos within the images folder with your logos. Keep the same file names and image sizes.
 Adapt any other code to your liking and share!
-That's it, you should see the changes.
+Thats it, you should see the changes.
+
+
+==========================================================================
+Other Resommended plugins I recommend to run multilingual sites with WPMU:
+==========================================================================
+
+http://wordpress.org/plugins/multisite-language-switcher/
+http://wordpress.org/plugins/wp-native-dashboard/
+
