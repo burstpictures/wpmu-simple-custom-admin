@@ -12,15 +12,15 @@ Version: 1.0
 Author URI: http://tarmak.co/
 */
 
-// Use this to redirect to a tempory page or old website folder on your domain whilst designing the wordpress theme
-if ( ! function_exists( 'simplify_temp_page_redirect' ) ) {
-	function simplify_temp_page_redirect() {
-	    if (!current_user_can('administrator')) {
-		wp_safe_redirect('/bak/index.php',307);
-	    }
-	}
-}
-add_action('template_redirect','simplify_temp_page_redirect');
+// Use this to redirect to a tempory page or old website folder on your domain whilst designing a wordpress theme on a live site
+// if ( ! function_exists( 'simplify_temp_page_redirect' ) ) {
+//	function simplify_temp_page_redirect() {
+//	    if (!current_user_can('administrator')) {
+//		wp_safe_redirect('/path/index.php',307);
+//	    }
+//	}
+//}
+//add_action('template_redirect','simplify_temp_page_redirect');
 
 // Use and Force 1 column Dashboard
 if ( ! function_exists( 'simplify_screen_layout_columns' ) ) {
