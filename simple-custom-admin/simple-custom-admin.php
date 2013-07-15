@@ -157,7 +157,7 @@ if ( ! function_exists( 'simplify_add_mysites_logo' ) ) {
 			$menu_id  = 'blog-' . $blog->userblog_id;
 			$blogname = empty( $blog->blogname ) ? $blog->domain : $blog->blogname;
 			if ( is_multisite( ) ) $lang = get_blog_option( $blog->userblog_id, 'WPLANG' );
-			else $lang = get_option( 'WPLANG' );
+			else $lang = get_bloginfo( 'language' );
 			switch($lang){
 				case "":
 				$language = "EN";
@@ -211,8 +211,8 @@ if ( ! function_exists( 'simplify_edit_admin_menus' ) ) {
 //	    }
 //	    else {
 		if ( is_multisite( ) ) { $lang = get_blog_option( $userblog_id, 'WPLANG' ); $blog_name = get_blog_option( $userblog_id, 'blogname') . " / "; }
-		else { $lang = get_option( 'WPLANG' ) ; $blog_name = get_option('blogname') . " / "; }
-		    switch($lang){
+		else { $lang = get_bloginfo( 'language' ); $blog_name = get_option('blogname') . " / "; }
+		    switch($lang) {
 			   case "":
 				$flag = "us";
 				$language = "EN";
