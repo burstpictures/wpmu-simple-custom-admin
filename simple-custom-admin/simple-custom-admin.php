@@ -191,12 +191,13 @@ if ( ! function_exists( 'simplify_add_mysites_logo' ) ) {
 					'title' 	=>  __('Network Admin') ,
 					'href' 		=> get_admin_url( 1, 'network' ) 
 					));
-	}
+
 		$wp_admin_bar->add_menu( array(
 					'id' 		=> 'my-sites',
 					'href' 		=> '#',
 					));
 	}
+    }
 }
 add_action( 'wp_before_admin_bar_render', 'simplify_add_mysites_logo' );
 
