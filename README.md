@@ -1,6 +1,5 @@
-=======================================
 Wordpress-Multisite-Simple-Custom-Admin
-=======================================
+<hr>
 
 Simplifies and Customizes the admin for wordpress single site and multisite, geared towards setting up
 multilingual sites on WPMU but it also works on single site installs.
@@ -8,9 +7,8 @@ multilingual sites on WPMU but it also works on single site installs.
 This plugin was developped to reside within the mu-plugins directory of wordpress as all options are hardcoded and
 remain invisible to the main users.
 
-================
 The plugin will:
-================
+<hr>
 
 01.  redirect to a tempory page landing page or old website folder on your domain whilst designing a wordpress theme;
 02.  force 1 column on the site and network Dashboards;
@@ -25,9 +23,8 @@ The plugin will:
 10.  redirect the Network super-admin to the Network Admin page after login;
 
 
-=============
 Installation:
-=============
+<hr>
 
 Copy the whole folder to your mu-plugins directory within the wp-content folder. If the directory does not exist, create one.
 Create a load.php file in your mu-plugins directory and add the following lines to it:
@@ -42,9 +39,8 @@ Adapt any other code to your liking and share!
 Thats it, you should see the changes.
 
 
-==========================================================================
 Other Resommended plugins I recommend to run multilingual sites with WPMU:
-==========================================================================
+<hr>
 
 http://wordpress.org/plugins/multisite-language-switcher/
 http://wordpress.org/plugins/wp-native-dashboard/
