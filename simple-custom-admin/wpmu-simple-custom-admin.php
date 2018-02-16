@@ -1,15 +1,15 @@
 <?php
 /**
- * @package simple-custom-admin
- * @version 1.0
+ * @package wpmu-simple-custom-admin
+ * @version 1.1
  */
 /*
-Plugin Name: Simple Custom Admin
-Plugin URI: http://tarmak.co/
+Plugin Name: WPMU Simple Custom Admin
+Plugin URI: https://burst.pictures/
 Description: Simplifies and Customizes the admin for wordpress single site and multisite, geared towards setting up multilingual sites on WPMU
 Author: Eric Trometer
-Version: 1.0
-Author URI: http://tarmak.co/
+Version: 1.1
+Author URI: https://burst.pictures/
 */
 
 // Use this to redirect to a tempory page or old website folder on your domain whilst designing a wordpress theme on a live site
@@ -39,13 +39,13 @@ if ( ! function_exists( 'simplify_screen_layout_dashboard' ) ) {
 }
 add_filter( 'get_user_option_screen_layout_dashboard', 'simplify_screen_layout_dashboard' );
 
-// Force to 1 column on network admin page not working yet
+// Force to 1 column on network admin page
 if ( ! function_exists( 'simplify_network_screen_layout_dashboard' ) ) {
 	function simplify_network_screen_layout_dashboard( $nr ) {
 	    return 1;
 	}
-	add_filter( 'get_user_option_screen_layout_dashboard-network', 'simplify_network_screen_layout_dashboard' );
 }
+add_filter( 'get_user_option_screen_layout_dashboard-network', 'simplify_network_screen_layout_dashboard' );
 
 // Remove annoying Dashboard widgets, Welcome Panel and access to help for all users
 if ( ! function_exists( 'simplify_dashboard_widgets' ) ) {
@@ -112,8 +112,8 @@ if ( ! function_exists( 'simplify_add_logo' )  && ! is_multisite( ) ) {
 				content: "";
 				opacity: 1;
 				background: url(' . content_url() .'/mu-plugins/simple-custom-admin/images/logo-20.png);
-            }
-        </style>';
+            		}
+        		</style>';
 	}
 	add_action('admin_head', 'simplify_add_logo');
 }
@@ -121,13 +121,15 @@ if ( ! function_exists( 'simplify_add_logo' )  && ! is_multisite( ) ) {
 // White Label the footer and remove wordpress version
 if ( ! function_exists( 'simplify_remove_footer_admin' ) ) {
 	function simplify_remove_footer_admin () {
-		echo '&copy; 2013 - <a href="http://tarmak.co/" target="_blank">TARMAK</a>';
+		echo '&copy; 2013 - <a href="http://yourdomain.com/" target="_blank">YOUR COMPANY</a>';
 	}
 }
 add_filter('admin_footer_text', 'simplify_remove_footer_admin');
 
 if ( ! function_exists( 'simplify_change_footer_version' ) ) {
-	function simplify_change_footer_version() {return ' ';}
+	function simplify_change_footer_version() {
+		return ' ';
+	}
 }
 add_filter( 'update_footer', 'simplify_change_footer_version', 9999);
 
@@ -242,14 +244,14 @@ add_filter( 'option_uploads_use_yearmonth_folders', '__return_false', 100 );
 
 // Write to DB does not work!! Looking for a solution!
 //if ( get_blog_option( $blog_id, 'uploads_use_yearmonth_folders' ) == true || get_option( $blog_id, 'uploads_use_yearmonth_folders' ) == '' ) {
-//function simplifyit_upload_folder(){
+//function simplify_upload_folder(){
 //	  switch_to_blog($blog_id);
 //	  update_blog_option($blog_id, 'uploads_use_yearmonth_folders', false);
 //	  switch_to_blog($blog_id);
 //	  update_option('uploads_use_yearmonth_folders', true);	  
 //	  restore_current_blog();
 //	  }
-//	  add_action( 'update_wpmu_options', 'simplifyit_upload_folder' );
+//	  add_action( 'update_wpmu_options', 'simplify_upload_folder' );
 //}
 
 // MultiSite redirect super admin to Network page after login
@@ -266,5 +268,5 @@ if ( ! function_exists( 'simplify_primary_login_redirect' ) && is_multisite( ) )
 	    }
 	    return $redirect_to;
 	} 
-	add_filter( 'login_redirect', 'simplify_primary_login_redirect', 100, 3 );
 }
+add_filter( 'login_redirect', 'simplify_primary_login_redirect', 100, 3 );
