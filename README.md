@@ -30,7 +30,7 @@ Copy the whole folder to your mu-plugins directory within the wp-content folder.
 Create a load.php file in your mu-plugins directory and add the following lines to it:
 
 <pre>// mu-plugins/load.php
-require WPMU_PLUGIN_DIR . '/simple-custom-admin/simple-custom-admin.php';</pre>
+require WPMU_PLUGIN_DIR . '/simple-custom-admin/wpmu-simple-custom-admin.php';</pre>
 
 
 Replace the logos within the images folder with your logos. Keep the same file names and image sizes.
